@@ -1,6 +1,6 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/test-pop-quizz",
+  "name": "Pop Quizz Node",
+  "description": "Pop Quizz Node.js and Database",
+  "repository": "https://github.com/heroku/pop-quizz-node",
   "keywords": ["node", "express", "heroku"]
 }
