@@ -7,15 +7,15 @@ Not already config (Our project structure will change to have a combined Angular
 
 
 # PopQuizz [Current Version:  **0**]
-**PopQuizz** is a web application. You can on the web site play on our real time game which is a kind of quizz base on the pop culture (It's why the name of the game is PopQuizz)
+**PopQuizz** is a web application. You can, on the web site, play on our real time game which is a kind of quizz based on the pop culture (It's why the name of the game is PopQuizz)
 
 ##### Start of the game
 This game haven't got preconditions. You just have to be connected to the game 
 ##### Game Progress
-Each 15 secondes will appear an image or a citation and a theme. With those informations you have to discover the name of artwork refer by the image or the citation. Faster you are, more points you gain.
-At the end of the 15 secondes the answer appear during 3 secondes and the game continue 
+Each 15 secondes will appear an image or a citation and a theme. With those informations, you have to discover where the image or the citation come from. The faster you are, the more points you get.
+At the end of the 15 seconds the answer appear during 3 seconds and the game goes on.
 ##### End Game
-The game is finish when a player reach the aim of point (Not already defined). In the case of two players have the same score at the end, the winner is the player who have reach the score in first
+The game is finished when a player reached the limit of point (Not already defined). In the case two players have the same score at the end, the winner is the player who have reached the score first.
 
 # Project Design
 ### Page Design & Application Structure
