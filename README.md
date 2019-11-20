@@ -1,14 +1,12 @@
 # Install
----
 Go into the project folder
 Run in the command: ```npm install```
 
 # Run
----
+Not already config (Our project structure will change to have a combined Angular/Node Application)
 
 
 # PopQuizz [Current Version:  **0**]
----
 **PopQuizz** is a web application. You can on the web site play on our real time game which is a kind of quizz base on the pop culture (It's why the name of the game is PopQuizz)
 
 ##### Start of the game
@@ -20,7 +18,6 @@ At the end of the 15 secondes the answer appear during 3 secondes and the game c
 The game is finish when a player reach the aim of point (Not already defined). In the case of two players have the same score at the end, the winner is the player who have reach the score in first
 
 # Project Design
----
 ### Page Design & Application Structure
 
 To be clear we created a full mockup of the application on InVision Tool to have a base of what we want to do.
@@ -38,7 +35,6 @@ Design Goal : [InVision Project]('https://projects.invisionapp.com/prototype/ck2
 
 
 # Project Version
----
 ### Design Versions
 - **Version 0**
   - Login Page
