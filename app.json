@@ -1,0 +1,6 @@
+{
+  "name": "Pop Quizz",
+  "description": "Pop Quizz Angular, Node.js",
+  "repository": "https://github.com/BenjTr/PopQuizz.git",
+  "keywords": ["node", "express", "heroku", "angular"]
+}
