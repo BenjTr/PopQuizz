@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import {HttpClientModule} from '@angular/common/http';
 
 import {
   MatInputModule,
@@ -36,7 +37,8 @@ import {
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
