@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class='login'>
+    <h1>PopQuizz</h1>
+    <div class='form'>
+        <mat-form-field>
+            <input matInput type="username" [(ngModel)]="enteredUsername">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" [(ngModel)]="enteredPassword">
+        </mat-form-field>
+        <div class='button'>
+            <button
+                mat-raised-button
+                (click)="signUp()">Sign up
+            </button>
+            <button
+                mat-raised-button
+                color='primary'
+                (click)="signIn()">Sign in
+            </button>
+         </div>
+    </div>
+</div>
