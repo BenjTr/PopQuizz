@@ -1,1 +1,7 @@
-<p>user works!</p>
+<div>
+    <a (click)="onBackClick()"> < Back</a>
+    <h3>Profil</h3>
+    <input [value]="pseudo" disabled="true" type="text" class="pseudo"/>
+    <input value="********" disabled="true" type="text" class="password"/>
+    <button routerLink="/change-password">Change Password</button>
+</div>

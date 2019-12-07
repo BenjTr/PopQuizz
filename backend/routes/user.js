@@ -19,7 +19,7 @@ router.post('/login', async function (req, res) {
         try {
             if (await userServices.verifyPseudo(pseudo, password)) {
                 req.session.pseudo = pseudo // Initialising user session
-                res.status(200).end("{pseudo: " + pseudo + "}")
+                res.status(200).end("{\"pseudo\": \"" + pseudo + "\"}")
             } else {
                 res.status(401).end(formatErrorMessage("Incorrect credentials."))
             }
@@ -75,7 +75,7 @@ router.put('/password', async function (req, res) {
         } else {
             try {
                 if (await userServices.updatePassword(req.session.pseudo, oldPassword, newPassword)) {
-                    res.status(202).end("{message: \"Password has been changed !\"}")
+                    res.status(202).end("{\"message\": \"Password has been changed !\"}")
                 } else {
                     res.status(409).end(formatErrorMessage("Old password does not match"))
                 }
@@ -95,7 +95,7 @@ router.put('/password', async function (req, res) {
  */
 function formatErrorMessage(message) {
     console.log(message)
-    return "{error : \"" + message + "\"}"
+    return "{\"error\" : \"" + message + "\"}"
 }
 
 module.exports = router
