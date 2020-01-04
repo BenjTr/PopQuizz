@@ -22,32 +22,31 @@ import {UtilsService} from './utils/utils.service';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
-
 @NgModule({
-    declarations: [
-        AppComponent,
-        GameComponent,
-        LoginComponent,
-        RegisterComponent,
-        UserComponent,
-        HomeComponent,
-        ConfirmationComponent,
-        ChangePasswordComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        MatButtonModule,
-        MatInputModule,
-        MatFormFieldModule,
-        HttpClientModule,
-        StorageServiceModule,
-        SocketIoModule.forRoot(config),
-    ],
-    providers: [UtilsService],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    GameComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent,
+    HomeComponent,
+    ConfirmationComponent,
+    ChangePasswordComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    HttpClientModule,
+    StorageServiceModule,
+    SocketIoModule.forRoot(config),
+    MatFormFieldModule
+  ],
+  providers: [UtilsService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

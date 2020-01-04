@@ -1,50 +1,66 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
-import { User } from '../user.model';
+import {UtilsService} from '../utils/utils.service';
+import {Router} from '@angular/router';
+import {sha512} from "js-sha512";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  enteredUsername = '';
-  enteredPassword = '';
 
-  constructor(private http: HttpClient) {}
+    private LOGIN_URL = '/api/users/login';
 
-  ngOnInit() {
-  }
 
-  signUp() {
-    alert('not released yet');
-  }
+    errorMessage: string;
+    enteredUsername = '';
+    enteredPassword = '';
 
-  signIn() {
-    const user: User = {
-      userName: this.enteredUsername,
-      password: this.enteredPassword
-    };
-    this.http.post('/api/users/login', {
-      login: user.userName,
-      password: user.password
-    })
-    .subscribe(
-        (val) => {
-            console.log('POST call successful value returned in body', 
-                        val);
-        },
-        response => {
-            console.log('POST call in error', response);
-        },
-        () => {
-            console.log('The POST observable is now completed.');
-        });
 
-  }
+    constructor(private http: HttpClient, private utils: UtilsService, private router: Router) {
+    }
+
+    ngOnInit() {
+    }
+
+    signUp() {
+        this.router.navigate(['/register']);
+    }
+
+    signIn() {
+        this.http.post(this.LOGIN_URL, {
+            login: this.enteredUsername,
+            password: sha512(this.enteredPassword)
+        })
+            .subscribe(
+                (val) => {
+                    this.utils.saveInLocal('pseudo', JSON.parse(JSON.stringify(val)).pseudo);
+                    this.router.navigate(['/']);
+                },
+                error => {
+                    this.errorHandler(error);
+                });
+
+    }
+
+    errorHandler = (error) => {
+        // tslint:disable-next-line:triple-equals
+        if (error.status == '400') {
+            this.errorMessage = 'Error during sending of parameters.';
+        }
+        // tslint:disable-next-line:triple-equals
+        if (error.status == '500') {
+            this.errorMessage = 'Database Error.';
+        }
+        // tslint:disable-next-line:triple-equals
+        if (error.status == '401') {
+            this.errorMessage = 'Login or Password incorrect.';
+        }
+    }
 
 }
