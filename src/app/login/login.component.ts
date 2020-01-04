@@ -2,6 +2,7 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UtilsService} from '../utils/utils.service';
 import {Router} from '@angular/router';
+import {sha512} from "js-sha512";
 
 @Injectable({
     providedIn: 'root'
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
     enteredUsername = '';
     enteredPassword = '';
 
+
     constructor(private http: HttpClient, private utils: UtilsService, private router: Router) {
     }
 
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
     signIn() {
         this.http.post(this.LOGIN_URL, {
             login: this.enteredUsername,
-            password: this.enteredPassword
+            password: sha512(this.enteredPassword)
         })
             .subscribe(
                 (val) => {
