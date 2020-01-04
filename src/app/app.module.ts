@@ -13,18 +13,15 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-<<<<<<< HEAD
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
-=======
 import {HttpClientModule} from '@angular/common/http';
 
 import {
   MatInputModule,
   MatButtonModule,
  } from '@angular/material';
->>>>>>> b78e8e5d59f06e3aa94816277b0519e3ec4e32dc
 
 @NgModule({
   declarations: [
@@ -41,14 +38,11 @@ import {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-    SocketIoModule.forRoot(config)
-=======
+    SocketIoModule.forRoot(config),
     FormsModule,
     MatButtonModule,
     MatInputModule,
     HttpClientModule
->>>>>>> b78e8e5d59f06e3aa94816277b0519e3ec4e32dc
   ],
   providers: [],
   bootstrap: [AppComponent]
