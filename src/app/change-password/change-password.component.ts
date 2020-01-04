@@ -2,6 +2,7 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {sha512} from "js-sha512";
 
 @Injectable({
     providedIn: 'root'
@@ -38,8 +39,8 @@ export class ChangePasswordComponent implements OnInit {
         } else {
 
             const requestBody = {
-                oldPassword: this.oldPassword,
-                newPassword: this.newPassword
+                oldPassword: sha512(this.oldPassword),
+                newPassword: sha512(this.newPassword)
             };
 
             // To send session cookie
