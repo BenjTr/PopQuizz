@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UtilsService} from "./utils/utils.service";
-import {Router} from "@angular/router";
+import {UtilsService} from './utils/utils.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-root',
