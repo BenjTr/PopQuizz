@@ -1,7 +1,12 @@
 <div>
     <a (click)="onBackClick()"> < Back</a>
     <h3>Profil</h3>
-    <input [value]="pseudo" disabled="true" type="text" class="pseudo"/>
-    <input value="********" disabled="true" type="text" class="password"/>
-    <button routerLink="/change-password">Change Password</button>
+    <mat-form-field>
+    <input matInput [value]="pseudo" disabled="true" type="text" class="pseudo"/>
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput value="********" disabled="true" type="text" class="password"/>
+    </mat-form-field>
+        <button routerLink="/change-password">Change Password</button>
+    <button (click)="onDisconnect()">Disconnect</button>
 </div>

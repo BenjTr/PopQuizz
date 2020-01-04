@@ -2,12 +2,12 @@
     margin: 10px;
 }
 
-h1 {
+h2 {
     color: #FF3366;
-    font-size: 118px;
+    font-size: 100px;
     display: block;
     text-align: center;
-    margin-top: 18rem;
+    margin-top: 4rem;
 }
 
 .form {

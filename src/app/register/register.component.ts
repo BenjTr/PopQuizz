@@ -26,6 +26,10 @@ export class RegisterComponent implements OnInit {
     }
 
     signUp() {
+        if (this.enteredPassword == '' || this.enteredUsername == '' || this.enteredConfirmationPassword == '') {
+            this.errorMessage = 'Complete the fields.';
+            return;
+        }
         if (this.enteredPassword !== this.enteredConfirmationPassword) {
           this.errorMessage = 'Passwords do not match !';
           return;
@@ -37,7 +41,7 @@ export class RegisterComponent implements OnInit {
             .subscribe(
                 (val) => {
                     this.utils.saveInLocal('pseudo', JSON.parse(JSON.stringify(val)).pseudo);
-                    this.router.navigate(['/']);
+                    this.router.navigate(['/home']);
                 },
                 error => {
                     this.errorHandler(error);
