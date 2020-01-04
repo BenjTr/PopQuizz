@@ -33,6 +33,10 @@ export class LoginComponent implements OnInit {
     }
 
     signIn() {
+        if (this.enteredPassword == '' || this.enteredUsername == '') {
+            this.errorMessage = 'Complete the fields.';
+            return;
+        }
         this.http.post(this.LOGIN_URL, {
             login: this.enteredUsername,
             password: sha512(this.enteredPassword)
@@ -40,7 +44,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 (val) => {
                     this.utils.saveInLocal('pseudo', JSON.parse(JSON.stringify(val)).pseudo);
-                    this.router.navigate(['/']);
+                    this.router.navigate(['home']);
                 },
                 error => {
                     this.errorHandler(error);

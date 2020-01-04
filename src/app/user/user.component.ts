@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this.utils.getFromLocal('pseudo') === undefined) {
+        if (this.utils.getFromLocal('pseudo') == undefined) {
             this.router.navigate(['/login']);
         }
         this.pseudo = this.utils.getFromLocal('pseudo');
@@ -25,6 +25,11 @@ export class UserComponent implements OnInit {
 
     onBackClick() {
         this.location.back();
+    }
+
+    onDisconnect() {
+        this.utils.deleteFromLocal('pseudo');
+        this.router.navigate(['/login']);
     }
 
 }
