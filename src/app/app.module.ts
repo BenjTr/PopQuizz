@@ -1,6 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,12 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 import {HttpClientModule} from '@angular/common/http';
+import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {StorageServiceModule} from 'angular-webstorage-service';
+import {UtilsService} from './utils/utils.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {
   MatInputModule,
@@ -47,4 +53,5 @@ import {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
