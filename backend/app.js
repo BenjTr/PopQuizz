@@ -9,17 +9,16 @@ const gameRouter = require('./routes/game')
 
 const app = express()
 
-// DO CONNECTION TO THE DATABASE HERE
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use('/', express.static(path.join(__dirname, 'angular')))
 app.use(session({
   secret: process.env.SESSION_SECRET || 'AD3FoLtP4Szw0rD',
   resave: false,
   saveUninitialized: false,
-  cookie: {maxAge: 60000}
+  cookie: { maxAge: 60000 }
 }))
 
 app.use('/api/users', usersRouter)
