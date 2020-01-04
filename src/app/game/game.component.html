@@ -21,3 +21,7 @@ Answer:  {{ answer }}
 <div *ngIf="!isPicture">
     {{ data }}
 </div>
+
+<div *ngFor="let player of players | keyvalue:score">
+    {{ player.pseudo }} : {{ player.score }}
+</div>

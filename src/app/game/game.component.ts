@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilsService } from '../utils/utils.service';
 import { Socket } from 'ngx-socket-io';
 
 @Component({
@@ -8,6 +9,7 @@ import { Socket } from 'ngx-socket-io';
 })
 export class GameComponent implements OnInit {
 
+  // Game Informations
   time: Number = 0;
   round: Number = 0;
   theme: String = '';
@@ -15,19 +17,33 @@ export class GameComponent implements OnInit {
   data: String = '';
   answer: String = '';
 
-  constructor(private socket: Socket) {
+  // Players 
+  pseudo: String = '';
+  players: Map<String, JSON> = new Map();
+
+  constructor(private socket: Socket, private utils: UtilsService) {
+    this.pseudo = this.utils.getFromLocal('pseudo');
+
+
+    this.socket.on('new-connection', res => {
+      this.socket.emit('new-player', { pseudo: this.utils.getFromLocal('pseudo')});
+    });
+
     this.socket.on('time', res => {
       this.time = res.time;
     });
+
     this.socket.on('round', res => {
       this.round = res.round;
       this.answer = '';
     });
+
     this.socket.on('question', res => {
       this.theme = res.theme;
       this.isPicture = res.is_picture;
       this.data = res.data;
     });
+
     this.socket.on('answer', res => {
       this.answer = res.answer;
     });
@@ -38,5 +54,9 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  score = (a, b) => {
+    if (a.value.score < b.value.score) { return b.key; }
   }
 }

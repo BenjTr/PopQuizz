@@ -59,12 +59,25 @@ let questions = []
 let currIndex = 0
 let status = 'sleep'
 
-io.on('connection', socket => {
-  connectUsers++
-  console.log('User connected ' + connectUsers)
+const players = new Map()
 
-  if (status === 'sleep') {
-    gameStart()
+io.on('connection', socket => {
+  io.emit('new-connection')
+})
+
+io.on('new-player', res => {
+  if (players.get(res.pseudo) === undefined) {
+    players.set(res.pseudo, {
+      pseudo: res.pseudo,
+      score: 0,
+      found: false
+    })
+
+    sendPlayers()
+
+    if (status === 'spleep') {
+      gameStart()
+    }
   }
 })
 
@@ -74,7 +87,7 @@ io.on('disconnect', () => {
 })
 
 async function gameStart () {
-  if (connectUsers >= 2) {
+  if (players.size >= 2) {
     time = 30
     round = 1
     status = 'start'
@@ -173,6 +186,10 @@ function sendAnswer () {
   io.emit('answer', { answer: selectedQuestion.response })
   questions.splice(currIndex, 1)
   currIndex = 0
+}
+
+function sendPlayers () {
+  io.emit('players', { players: players })
 }
 
 // Node Server
