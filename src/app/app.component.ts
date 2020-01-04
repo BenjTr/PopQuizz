@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
 
 
     ngOnInit(): void {
-        console.log('stored Pseudo : ' + this.utils.getFromLocal('pseudo'));
         if (this.utils.getFromLocal('pseudo') == undefined) {
             this.router.navigate(['/login']);
         }
