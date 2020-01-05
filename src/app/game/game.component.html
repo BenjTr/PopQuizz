@@ -22,6 +22,10 @@ Answer:  {{ answer }}
     {{ data }}
 </div>
 
+<div *ngIf="!lockInput">
+    <input  [(ngModel)]="userAnswer" (keydown.enter)="onKeydown($event)">
+</div>
+
 <div *ngFor="let player of players | keyvalue:score">
-    {{ player.pseudo }} : {{ player.score }}
+    {{ player.value.pseudo }} : {{ player.value.score }}
 </div>
