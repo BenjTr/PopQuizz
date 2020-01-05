@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
 const usersRouter = require('./routes/user')
-const gameRouter = require('./routes/game')
 
 const app = express()
 
@@ -22,7 +21,6 @@ app.use(session({
 }))
 
 app.use('/api/users', usersRouter)
-app.use('/api/game', gameRouter)
 
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, 'angular', 'index.html'))
