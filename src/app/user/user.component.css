@@ -1,0 +1,32 @@
+.user {
+    margin: 10px;
+}
+
+h1 {
+    color: #FF3366;
+    font-size: 118px;
+    display: block;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.form {
+    padding-top: 15rem;
+    margin: auto;
+    width: 30%;
+}
+
+mat-form-field {
+    display: block;
+}
+
+button {
+    margin-top: 2rem;
+    margin-left: 6rem;
+}
+
+.back {
+    margin-top: 3rem;
+    margin-left: 1rem;
+    color: #FF3366;
+}
