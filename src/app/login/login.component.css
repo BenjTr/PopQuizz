@@ -1,0 +1,25 @@
+.login {
+    margin: 10px;
+}
+
+h1 {
+    color: #FF3366;
+    font-size: 118px;
+    display: block;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.form {
+    margin: auto;
+    width: 30%;
+}
+
+mat-form-field {
+ display: block;
+}
+
+button {
+    margin-top: 50px;
+    margin-left: 120px;
+}

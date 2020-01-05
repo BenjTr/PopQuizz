@@ -1,0 +1,23 @@
+<div class='register'>
+    <h2 >PopQuizz</h2>
+    <div class='form'>
+        <mat-form-field>
+            <input matInput type="username" placeholder="Username" required [(ngModel)]="enteredUsername">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password" required [(ngModel)]="enteredPassword">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" placeholder="Confirm Password" required [(ngModel)]="enteredConfirmationPassword">
+        </mat-form-field>
+        <div *ngIf="errorMessage" class="mat-error">
+            {{errorMessage}}
+        </div>
+        <div class='button'>
+            <button
+                    mat-raised-button
+                    (click)="signUp()">Sign up
+            </button>
+        </div>
+    </div>
+</div>

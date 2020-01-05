@@ -1,0 +1,31 @@
+<p>game works!</p>
+
+<div>
+Round: {{ round }}
+Time: {{ time }}
+</div>
+
+<div>
+Theme : {{ theme }}
+</div>
+
+<div>
+Answer:  {{ answer }}
+</div>
+
+
+<div *ngIf="isPicture">
+    <img src="{{ data }}">
+</div>
+
+<div *ngIf="!isPicture">
+    {{ data }}
+</div>
+
+<div *ngIf="!lockInput">
+    <input  [(ngModel)]="userAnswer" (keydown.enter)="onKeydown($event)">
+</div>
+
+<div *ngFor="let player of players | keyvalue:score">
+    {{ player.value.pseudo }} : {{ player.value.score }}
+</div>
