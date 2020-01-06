@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:server": "nodemon ./backend/server.js"
+    "start:server": "node ./backend/server.js"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +38,7 @@
     "pg": "^7.17.0",
     "present": "^1.0.0",
     "rxjs": "~6.4.0",
+    "socket.io": "^2.3.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

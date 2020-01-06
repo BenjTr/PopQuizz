@@ -71,7 +71,7 @@ router.put('/password', async function (req, res) {
     } else {
       try {
         if (await userServices.updatePassword(req.session.pseudo, oldPassword, newPassword)) {
-          res.status(202).end(formatSuccessMessage('message','Password has been changed !'))
+          res.status(202).end(formatSuccessMessage('message', 'Password has been changed !'))
         } else {
           res.status(409).end(formatErrorMessage('Old password does not match'))
         }
