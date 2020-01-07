@@ -1,8 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Avenir';
+    src: url('./assets/fonts/Avenir-Roman/Avenir-Roman.woff2')format('woff2'), url('./assets/fonts/Avenir-Roman/Avenir-Roman.woff')format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir-Black';
+    src: url('./assets/fonts/Avenir-Black/Avenir-Black.woff2')format('woff2'), url('./assets/fonts/Avenir-Black/Avenir-Black.woff')format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir-Light';
+    src: url('./assets/fonts/Avenir-Light/Avenir-Light.woff2')format('woff2'), url('./assets/fonts/Avenir-Light/Avenir-Light.woff')format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
 
 html, body {
-    height: 100%;
     background-color: #192229;
     color: white;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+    font-family: 'Avenir', 'Avenir-Black', 'Avenir-Light';
+}

@@ -6,7 +6,6 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {HomeComponent} from './home/home.component';
 import {UserComponent} from './user/user.component';
-import {ConfirmationComponent} from './confirmation/confirmation.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 
 
@@ -17,7 +16,6 @@ const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'user', component: UserComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'confirmation', component: ConfirmationComponent},
     {path: 'change-password', component: ChangePasswordComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'}

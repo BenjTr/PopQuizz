@@ -100,6 +100,8 @@ function addPlayer (pseudo) {
     if (status === 'sleep') {
       gameStart()
     }
+  } else {
+    players.get(pseudo).active = true
   }
   sendPlayersData()
 }

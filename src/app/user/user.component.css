@@ -1,32 +1,46 @@
-.user {
-    margin: 10px;
-}
-
-h1 {
-    color: #FF3366;
-    font-size: 118px;
-    display: block;
-    text-align: center;
-    margin-top: 4rem;
-}
-
 .form {
-    padding-top: 15rem;
     margin: auto;
-    width: 30%;
+    width: 30rem;
 }
 
-mat-form-field {
+.profil-title {
+    text-align: center;
+    font-size: 3rem;
+    margin: 3rem 0;
+    font-family: Avenir-Black;
+}
+
+.btn-group {
+    margin: auto;
+    width: 30rem;
+}
+
+.form-input{
     display: block;
 }
 
-button {
-    margin-top: 2rem;
-    margin-left: 6rem;
+.btn-disconnect {
+    float: right;
+    background: #6f0004;
+}
+
+.btn {
+    margin: 2rem;
+    box-shadow: none;
 }
 
 .back {
-    margin-top: 3rem;
-    margin-left: 1rem;
+    cursor: pointer;
     color: #FF3366;
+    font-family: Avenir-Light;
+}
+
+.popquizz {
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    color: #FF3366;
+    font-size: 1.5rem;
+    position: absolute;
+    font-family: Avenir-Black;
 }

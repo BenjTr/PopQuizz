@@ -11,16 +11,15 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {UserComponent} from './user/user.component';
 import {HomeComponent} from './home/home.component';
-import {ConfirmationComponent} from './confirmation/confirmation.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import {MatButtonModule, MatInputModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 import {StorageServiceModule} from 'angular-webstorage-service';
 import {HttpClientModule} from '@angular/common/http';
 import {UtilsService} from './utils/utils.service';
 
 const config: SocketIoConfig = {url: 'https://pop-quizz.herokuapp.com', options: {}};
-
 
 @NgModule({
     declarations: [
@@ -30,7 +29,6 @@ const config: SocketIoConfig = {url: 'https://pop-quizz.herokuapp.com', options:
         RegisterComponent,
         UserComponent,
         HomeComponent,
-        ConfirmationComponent,
         ChangePasswordComponent
     ],
     imports: [
@@ -41,6 +39,7 @@ const config: SocketIoConfig = {url: 'https://pop-quizz.herokuapp.com', options:
         FormsModule,
         MatButtonModule,
         MatInputModule,
+        MatIconModule,
         HttpClientModule,
         StorageServiceModule
     ],

@@ -1,25 +1,31 @@
-.login {
-    margin: 10px;
-}
-
-h1 {
-    color: #FF3366;
-    font-size: 118px;
-    display: block;
-    text-align: center;
-    margin-top: 4rem;
-}
 
 .form {
     margin: auto;
-    width: 30%;
+    width: 30rem;
 }
 
-mat-form-field {
- display: block;
+.btn-group {
+    margin: auto;
+    width: 30rem;
 }
 
-button {
-    margin-top: 50px;
-    margin-left: 120px;
+.form-input{
+    display: block;
+}
+
+.btn-sign {
+    float: right;
+}
+
+.btn {
+    margin: 2rem;
+    box-shadow: none;
+}
+
+.title {
+    margin: 5rem 0;
+    font-size: 5rem;
+    color: #FF3366;
+    text-align: center;
+    font-family: Avenir-Black;
 }

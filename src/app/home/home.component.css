@@ -1,0 +1,40 @@
+.background {
+    left: 0;
+    right: 0;
+    top: 5rem;
+    bottom: 5rem;
+    position: absolute;
+    background: #151D23;
+}
+
+.user {
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    color: #FF3366;
+    font-size: 1.2rem;
+    position: absolute;
+}
+
+.popquizz {
+    top: 2rem;
+    left: 2rem;
+    cursor: pointer;
+    color: #FF3366;
+    font-size: 1.5rem;
+    position: absolute;
+    font-family: Avenir-Black;
+}
+
+.start-btn {
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    font-weight: 100;
+    box-shadow: none;
+    padding: 1rem 2rem;
+    position: absolute;
+    font-family: Avenir-Light;
+    transform: translate(-50%, -50%);
+}
+

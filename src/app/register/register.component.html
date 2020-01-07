@@ -1,23 +1,33 @@
-<div class='register'>
-    <h2 >PopQuizz</h2>
+
+
+<div style="padding: 1rem;">
+    <a (click)="onBackClick()" class="back"> < Back </a>
+
+    <div class="title">PopQuizz</div>
+
     <div class='form'>
-        <mat-form-field>
-            <input matInput type="username" placeholder="Username" required [(ngModel)]="enteredUsername">
+
+        <mat-form-field class="form-input">
+            <input matInput type="username" placeholder="Username" required [(ngModel)]="enteredUsername" (keydown.enter)="signUp()">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput type="password" placeholder="Password" required [(ngModel)]="enteredPassword">
+        <mat-form-field class="form-input"> 
+            <input matInput type="password" placeholder="Password" required [(ngModel)]="enteredPassword" (keydown.enter)="signUp()">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput type="password" placeholder="Confirm Password" required [(ngModel)]="enteredConfirmationPassword">
+        <mat-form-field class="form-input">
+            <input matInput type="password" placeholder="Confirm Password" required [(ngModel)]="enteredConfirmationPassword" (keydown.enter)="signUp()">
         </mat-form-field>
         <div *ngIf="errorMessage" class="mat-error">
             {{errorMessage}}
         </div>
-        <div class='button'>
+
+        <div style="position: relative;">
             <button
+                    class="btn"
                     mat-raised-button
                     (click)="signUp()">Sign up
             </button>
         </div>
+
     </div>
+
 </div>

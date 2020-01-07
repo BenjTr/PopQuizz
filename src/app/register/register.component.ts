@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {UtilsService} from "../utils/utils.service";
 import {Router} from "@angular/router";
 import {sha512} from "js-sha512";
+import {Location} from '@angular/common';
 
 @Component({
     selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
     enteredPassword = '';
     enteredConfirmationPassword = '';
 
-    constructor(private http: HttpClient, private utils: UtilsService, private router: Router) {
+    constructor(private http: HttpClient, private utils: UtilsService, private router: Router, private location: Location) {
     }
 
     ngOnInit() {
@@ -62,6 +63,10 @@ export class RegisterComponent implements OnInit {
         if (error.status == '409') {
             this.errorMessage = 'Username already exists !';
         }
+    }
+
+    onBackClick() {
+        this.location.back();
     }
 
 }

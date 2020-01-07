@@ -10,19 +10,20 @@ import { Socket } from 'ngx-socket-io';
 export class GameComponent {
 
   // Game Informations
-  time: Number = 0;
-  round: Number = 0;
-  theme: String = '';
-  status: String = '';
-  isPicture: Boolean = false;
-  data: String = '';
+  time:number = 0;
+  round:number = 0;
+  theme:string = '';
+  status:string = '';
+  isPicture:boolean = false;
 
-  lockInput: Boolean = false;
-  answer: String = '';
-  userAnswer: String = '';
+  data:string = '';
 
-  // Players 
-  pseudo: String = '';
+  lockInput:boolean = false;
+  answer:string = '';
+  userAnswer:string = '';
+
+  // Players
+  pseudo:string = '';
   players: any = new Map();
 
   constructor(private socket: Socket, private utils: UtilsService) {
@@ -32,6 +33,10 @@ export class GameComponent {
 
     this.socket.on('time', res => {
       this.time = res.time;
+
+      if (this.status === 'end' && this.time === 5) {
+        this.players = new Map();
+      }
     });
 
     this.socket.on('round', res => {
