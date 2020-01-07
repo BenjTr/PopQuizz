@@ -1,31 +1,41 @@
-<p>game works!</p>
-
-<div>
-Round: {{ round }}
-Time: {{ time }}
-</div>
-
-<div>
-Theme : {{ theme }}
-</div>
-
-<div>
-Answer:  {{ answer }}
+<div *ngIf="status == 'sleep'" class="background-info">
+    <div class="text-info">
+        You need 1 more player to start a game
+    </div>
 </div>
 
 
-<div *ngIf="isPicture">
+<div *ngIf="status == 'start'" class="background-info">
+    <div class="text-info">
+        The game will start in {{ time }} second(s)
+    </div>
+</div>
+
+<div *ngIf="status == 'end'" class="background-info">
+    <div class="text-info">
+        End Game, the nex game will start in {{ time }} second(s)
+    </div>
+</div>
+
+<div class="time">{{ time }}</div>
+
+<div class="theme">{{ theme }}</div>
+
+<div class="answer">{{ answer }}</div>
+
+<div *ngIf="isPicture" class="img">
     <img src="{{ data }}">
 </div>
 
-<div *ngIf="!isPicture">
-    {{ data }}
+
+
+<div *ngIf="!lockInput" class="input-wrapper">
+    <input class="input" [(ngModel)]="userAnswer" (keydown.enter)="onKeydown($event)">
 </div>
 
-<div *ngIf="!lockInput">
-    <input  [(ngModel)]="userAnswer" (keydown.enter)="onKeydown($event)">
-</div>
-
-<div *ngFor="let player of players | keyvalue:score">
-    {{ player.value.pseudo }} : {{ player.value.score }}
+<div class="players">
+    <div class="player" *ngFor="let player of players | keyvalue:score">
+        <span [ngClass]="(player.value.found) ? 'pseudo-found' : 'pseudo'">{{ player.value.pseudo }}</span>
+        <span class="score">{{ player.value.score }}</span>
+    </div>
 </div>

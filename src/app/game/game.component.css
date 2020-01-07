@@ -1,0 +1,119 @@
+.players {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20rem;
+    padding: 1rem 0;
+    overflow-y: auto;
+    position: absolute;
+    background: #151D23;
+}
+
+.player {
+    width: 100%;
+    height: 1rem;
+    display: block;
+    padding: .25rem 0;
+    position: relative;
+}
+
+.score {
+    right: 1rem;
+    position: absolute;
+}
+
+.pseudo {
+    left: 2rem;
+    width: 14rem;
+    overflow: hidden;
+    position: absolute;
+    overflow-wrap: unset;
+    text-overflow: ellipsis;
+}
+
+.pseudo-found {
+    left: 2rem;
+    width: 14rem;
+    color: #FF3366;
+    overflow: hidden;
+    position: absolute;
+    overflow-wrap: unset;
+    text-overflow: ellipsis;
+}
+
+.input {
+    border: 0;
+    width: 100%;
+    height: 3rem;
+    color: #FFF;
+    box-shadow: none;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    text-align: center;
+    background: #273540;
+    text-transform:uppercase;
+    font-family: Avenir-Black;
+}
+
+.input:focus {
+    outline-color: #FFF;
+}
+
+.input-wrapper {
+    left: 0;
+    bottom: 0;
+    right: 20rem;
+    position: absolute;
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.background-info {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    right: 20rem;
+    position: absolute;
+    background: #192229;
+}
+
+.text-info {
+    top: 50%;
+    left: 50%;
+    color: #f36;
+    font-size: 2rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.time {
+    top: 2rem;
+    right: 25rem;
+    position: absolute;
+}
+
+.img {
+    top: 50%;
+    position: absolute;
+    left: calc(50% - 10rem);
+    transform: translate(-50%,-50%);
+}
+
+.theme {
+    top: 4rem;
+    color: #FFF;
+    font-size: 1.5rem;
+    position: absolute;
+    left: calc(50% - 10rem);
+    transform: translate(-50%, -50%);
+}
+
+.answer {
+    top: 6rem;
+    color: #f36;
+    font-size: 1rem;
+    position: absolute;
+    left: calc(50% - 10rem);
+    font-family: Avenir-Black;
+    transform: translate(-50%, -50%); 
+}

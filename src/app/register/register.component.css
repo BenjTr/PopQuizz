@@ -1,29 +1,31 @@
-.register {
-    margin: 10px;
-}
-
-h2 {
-    color: #FF3366;
-    font-size: 100px;
-    display: block;
-    text-align: center;
-    margin-top: 4rem;
-}
-
 .form {
     margin: auto;
-    width: 30%;
+    width: 30rem;
 }
 
-mat-form-field {
+.btn {
+    left: 50%;
+    top: 2rem;
+    box-shadow: none;
+    position: absolute;
+    transform: translate(-50%);
+}
+
+.form-input {
     display: block;
 }
 
-button {
-    margin-left: 13em;
-    margin-top: 3em;
+.title {
+    margin: 5rem 0;
+    font-size: 5rem;
+    color: #FF3366;
+    text-align: center;
+    font-family: Avenir-Black;
 }
 
-.button {
-
+.back {
+    cursor: pointer;
+    color: #FF3366;
+    font-family: Avenir-Light;
 }
+

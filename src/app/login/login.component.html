@@ -1,21 +1,30 @@
-<div class='login'>
-    <h1 >PopQuizz</h1>
-    <div class='form'>
-        <mat-form-field >
-            <input matInput type="username" placeholder="Username" required [(ngModel)]="enteredUsername">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput type="password" placeholder="Password" required [(ngModel)]="enteredPassword">
-        </mat-form-field>
-        <div *ngIf="errorMessage" class="mat-error">
-            {{errorMessage}}
+<div style="padding: 1rem;">
+    <div class="title">PopQuizz</div>
+
+    <div class="content">
+
+        <div class="form">
+            <mat-form-field class="form-input">
+                <input matInput type="username" placeholder="Username" required [(ngModel)]="enteredUsername" (keydown.enter)="signIn()">
+            </mat-form-field>
+            <mat-form-field class="form-input">
+                <input matInput type="password" placeholder="Password" required [(ngModel)]="enteredPassword" (keydown.enter)="signIn()">
+            </mat-form-field>
+            <div *ngIf="errorMessage" class="mat-error">
+                {{errorMessage}}
+            </div>
         </div>
-        <div class='button'>
+        
+
+
+        <div class="btn-group">
             <button
+                class="btn"
                 mat-raised-button
                 (click)="signUp()">Register
             </button>
             <button
+                class="btn btn-sign"
                 mat-raised-button
                 color='primary'
                 (click)="signIn()">Sign in
